@@ -96,7 +96,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/wellcome-to-Omini-Finance.mdx',
+              to: '/docs/intro',
             },
           ],
         },

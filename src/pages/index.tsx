@@ -20,7 +20,7 @@ function HomepageHeader() {
         <div>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/wellcome to Omini Finance">
+            to="/docs/intro">
             wellcome to Omini Finance
           </Link>
         </div>
