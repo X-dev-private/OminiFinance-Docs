@@ -1,0 +1,67 @@
+---
+sidebar_position: 1
+---
+
+# O que são Pages em um Desenvolvimento Web
+
+No desenvolvimento web moderno, **pages** (ou páginas) referem-se a arquivos que representam diferentes rotas dentro de uma aplicação. Elas são usadas para estruturar a navegação e exibir conteúdos dinâmicos ou estáticos de acordo com a URL acessada.
+
+## 📁 Como as Pages Funcionam?
+A forma como as páginas são gerenciadas depende do framework utilizado:
+
+### 1️⃣ **Em Next.js (File-based Routing)**
+No Next.js, cada arquivo dentro da pasta `/pages` se torna automaticamente uma rota.
+
+```bash
+/pages
+  ├── index.tsx  // Rota principal ('/')
+  ├── about.tsx  // Rota '/about'
+  ├── contact.tsx  // Rota '/contact'
+  ├── blog
+  │   ├── index.tsx  // Rota '/blog'
+  │   ├── [id].tsx  // Rota dinâmica '/blog/:id'
+```
+
+Exemplo de uma página Next.js:
+```tsx
+export default function About() {
+  return <h1>Sobre Nós</h1>;
+}
+```
+
+### 2️⃣ **Em React com React Router**
+No React puro, o React Router é usado para definir páginas e suas rotas.
+
+```tsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+}
+```
+
+### 3️⃣ **Em Nuxt.js (Vue.js)**
+No Nuxt.js, assim como no Next.js, a estrutura de arquivos dentro da pasta `/pages` define as rotas.
+
+```vue
+// pages/index.vue
+<template>
+  <h1>Página Inicial</h1>
+</template>
+```
+
+## 🔍 Diferença entre Pages e Components
+- **Pages** representam URLs dentro da aplicação e normalmente possuem estrutura e layout próprios.
+- **Components** são blocos reutilizáveis dentro das pages para dividir a interface em partes menores e modulares.
+
+## 🚀 Conclusão
+As **pages** são essenciais no desenvolvimento web moderno, permitindo a organização da navegação e a criação de experiências dinâmicas e escaláveis. Seja utilizando **Next.js**, **React Router** ou **Nuxt.js**, o conceito de páginas facilita o desenvolvimento e melhora a estrutura da aplicação. 🌍✨

@@ -1,0 +1,68 @@
+---
+sidebar_position: 1
+---
+
+# O que é Config em um Ambiente de Desenvolvimento
+
+No desenvolvimento de software, **config** (ou configuração) refere-se a um conjunto de parâmetros e ajustes que determinam o comportamento de um sistema, aplicação ou componente. As configurações permitem a personalização e adaptação do software para diferentes ambientes e necessidades.
+
+## 🔧 Características de Config
+As configurações geralmente possuem as seguintes características:
+
+- **Personalização** – Permitem ajustar o comportamento da aplicação sem modificar o código-fonte.
+- **Separação de Ambientes** – Diferentes configurações podem ser usadas para desenvolvimento, testes e produção.
+- **Segurança** – Sensíveis a boas práticas para evitar a exposição de informações críticas.
+- **Facilidade de Manutenção** – Simplificam ajustes sem necessidade de alteração direta no código.
+
+## 🏗 Como as Configurações são Utilizadas?
+Dependendo da tecnologia usada, as configurações podem ser estruturadas de diferentes formas:
+
+### Em Node.js (Arquivo `.env` e Configuração via Código)
+- Utiliza arquivos `.env` para armazenar variáveis de ambiente.
+- Configurações podem ser carregadas dinamicamente pelo código.
+
+```env
+PORT=3000
+DATABASE_URL=mongodb://localhost:27017/mydb
+```
+
+```js
+require('dotenv').config();
+console.log(process.env.PORT);
+```
+
+### Em React (Configuração via Variáveis de Ambiente)
+- Usa arquivos `.env` para definir configurações no ambiente do navegador.
+
+```env
+REACT_APP_API_URL=https://api.exemplo.com
+```
+
+```tsx
+const apiUrl = process.env.REACT_APP_API_URL;
+console.log(apiUrl);
+```
+
+### Em Vue.js (Configuração no Arquivo `vue.config.js`)
+- Configurações podem ser ajustadas diretamente no arquivo de build.
+
+```js
+module.exports = {
+  devServer: {
+    port: 8080
+  }
+};
+```
+
+### Em Angular (Configuração via `environment.ts`)
+- Diferentes configurações para cada ambiente.
+
+```ts
+export const environment = {
+  production: false,
+  apiUrl: 'https://dev.api.exemplo.com'
+};
+```
+
+As configurações são fundamentais para garantir a flexibilidade, segurança e organização do projeto, permitindo ajustes rápidos sem necessidade de modificar o código principal. 🚀
+

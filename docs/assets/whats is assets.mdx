@@ -1,0 +1,50 @@
+---
+sidebar_position: 1
+---
+
+# O que são Assets em um Ambiente de Desenvolvimento
+
+No ambiente de desenvolvimento, **assets** (ou ativos) são todos os arquivos estáticos que fazem parte do projeto e são utilizados para a exibição e funcionamento da aplicação. Eles não são código-fonte diretamente executável, mas complementam o código para fornecer a experiência visual e funcional esperada.
+
+## 📂 Tipos de Assets
+Os assets podem incluir:
+
+- **Imagens** (`.png`, `.jpg`, `.svg`, `.gif`) – Usadas para ícones, logos, ilustrações, backgrounds, etc.
+- **Fontes** (`.ttf`, `.woff`, `.woff2`) – Arquivos de tipografia customizada.
+- **Estilos** (`.css`, `.scss`, `.less`) – Folhas de estilo que definem a aparência da aplicação.
+- **Arquivos de mídia** (`.mp3`, `.mp4`, `.wav`) – Áudio e vídeo usados na aplicação.
+- **Documentos** (`.pdf`, `.json`, `.xml`) – Arquivos que podem conter dados estruturados ou conteúdos acessíveis ao usuário.
+
+## 🚀 Como os Assets são Gerenciados?
+Dependendo da tecnologia usada, os assets podem ser armazenados e processados de diferentes formas:
+
+### Em Projetos Front-end (React, Vue, Angular)
+- Normalmente ficam na pasta `public/` ou `assets/` e são acessados diretamente via URL.
+- Em React, por exemplo, assets podem ser importados no código ou usados como referências estáticas no diretório `public`.
+
+```tsx
+import logo from "../assets/logo.png";
+
+function Header() {
+  return <img src={logo} alt="Logo" />;
+}
+```
+
+### Em Back-end (Node.js, Django, Rails, etc.)
+- Servem como arquivos estáticos e podem ser armazenados em diretórios específicos, servidos por um CDN ou middleware como `express.static` no Node.js.
+
+```js
+const express = require("express");
+const app = express();
+
+app.use("/static", express.static("public"));
+```
+
+### Em Aplicações Mobile (Flutter, React Native, Android, iOS)
+- São armazenados em diretórios específicos (`assets/`, `res/`, `drawable/`) e acessados programaticamente.
+
+```dart
+Image.asset('assets/logo.png');
+```
+
+Os assets são essenciais para qualquer aplicação moderna, garantindo uma experiência visual e interativa rica para os usuários. 🚀

@@ -1,0 +1,73 @@
+---
+sidebar_position: 1
+---
+
+# O que são Components em um Ambiente de Desenvolvimento
+
+No desenvolvimento de software, um **component** (ou componente) é uma unidade reutilizável de código que encapsula uma parte da interface e lógica de um aplicativo. Ele facilita a modularização e manutenção do código, permitindo a reutilização de elementos em diferentes partes da aplicação.
+
+## 🎯 Características de um Component
+Os components geralmente possuem as seguintes características:
+
+- **Encapsulamento** – Cada component gerencia seu próprio estado e lógica.
+- **Reutilização** – Pode ser utilizado em diferentes partes do projeto sem duplicação de código.
+- **Composição** – Components podem ser combinados para criar interfaces complexas.
+- **Isolamento** – As mudanças em um component não afetam outros componentes diretamente.
+
+## 🏗 Como os Components são Utilizados?
+Dependendo da tecnologia usada, os components podem ser estruturados de diferentes formas:
+
+### Em React (JSX/TSX)
+- Components são funções ou classes que retornam elementos de interface (JSX).
+- Utilizam **props** para receber dados e **estado** para gerenciar alterações internas.
+
+```tsx
+import React from "react";
+
+type ButtonProps = {
+  label: string;
+};
+
+const Button: React.FC<ButtonProps> = ({ label }) => {
+  return <button className="bg-green-500 text-white p-2 rounded">{label}</button>;
+};
+
+export default Button;
+```
+
+### Em Vue.js (Single File Components)
+- Components são divididos em `template`, `script` e `style`.
+- Utilizam **props** para comunicação entre componentes e **eventos** para interação.
+
+```vue
+<template>
+  <button class="bg-green-500 text-white p-2 rounded">{{ label }}</button>
+</template>
+
+<script>
+export default {
+  props: {
+    label: String
+  }
+};
+</script>
+```
+
+### Em Angular (TypeScript)
+- Components são classes TypeScript decoradas com `@Component`.
+- Utilizam **bindings** para conectar lógica e interface.
+
+```ts
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-button',
+  template: '<button class="bg-green-500 text-white p-2 rounded">{{ label }}</button>'
+})
+export class ButtonComponent {
+  @Input() label!: string;
+}
+```
+
+Os components são essenciais para o desenvolvimento moderno, promovendo modularização, reutilização e escalabilidade do código. 🚀
+

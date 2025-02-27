@@ -1,0 +1,73 @@
+---
+sidebar_position: 1
+---
+
+# O que são Utils em um Desenvolvimento Web
+
+No desenvolvimento web, **utils** (ou utilitários) são funções, classes ou módulos que encapsulam lógica reutilizável, facilitando a manutenção e evitando repetição de código. Elas ajudam a organizar funcionalidades comuns usadas em diferentes partes de uma aplicação.
+
+## 📁 Estrutura de uma Pasta Utils
+Normalmente, as funções utilitárias são armazenadas dentro de uma pasta `utils` para facilitar a reutilização:
+
+```bash
+/src
+  ├── components/  # Componentes da aplicação
+  ├── pages/       # Páginas da aplicação
+  ├── utils/       # Funções utilitárias
+  │   ├── formatDate.ts  # Função para formatar datas
+  │   ├── apiHelper.ts  # Função para requisições HTTP
+  │   ├── mathUtils.ts  # Funções matemáticas
+```
+
+## 🛠 Exemplos de Funções Utilitárias
+### 1️⃣ **Formatar Datas**
+```ts
+export function formatDate(date: string): string {
+  return new Date(date).toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
+}
+```
+Uso:
+```ts
+import { formatDate } from "../utils/formatDate";
+console.log(formatDate("2025-02-26")); // 26 de fevereiro de 2025
+```
+
+### 2️⃣ **Requisições HTTP com Fetch**
+```ts
+export async function fetchData(url: string) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error("Erro ao buscar dados");
+  }
+  return response.json();
+}
+```
+Uso:
+```ts
+import { fetchData } from "../utils/apiHelper";
+fetchData("https://api.exemplo.com/dados").then(console.log);
+```
+
+### 3️⃣ **Funções Matemáticas**
+```ts
+export function soma(a: number, b: number): number {
+  return a + b;
+}
+```
+Uso:
+```ts
+import { soma } from "../utils/mathUtils";
+console.log(soma(10, 5)); // 15
+```
+
+## 🔍 Benefícios de Usar Utils
+✅ **Código mais organizado** – Separa lógica genérica da lógica específica de cada componente.
+✅ **Reutilização** – Evita duplicação de código, tornando-o mais limpo e eficiente.
+✅ **Facilidade de manutenção** – Centraliza funções comuns, facilitando futuras alterações.
+
+## 🚀 Conclusão
+Os **utils** são fundamentais para manter o código modular, reutilizável e fácil de manter. Criar uma estrutura bem organizada de utilitários melhora a produtividade e a escalabilidade da aplicação. 🔥

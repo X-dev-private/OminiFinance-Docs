@@ -1,0 +1,56 @@
+---
+sidebar_position: 1
+---
+
+# O que são Networks em um Desenvolvimento Web3
+
+No contexto do desenvolvimento **Web3**, **networks** (ou redes) referem-se às diferentes blockchains e camadas de infraestrutura que suportam a execução de contratos inteligentes, transações descentralizadas e aplicações DeFi (Finanças Descentralizadas). Essas redes podem variar em termos de consenso, escalabilidade e segurança.
+
+## 🌐 Tipos de Networks no Web3
+As networks no Web3 podem ser classificadas em diferentes categorias:
+
+### 1️⃣ **Mainnets (Redes Principais)**
+As **mainnets** são redes blockchain totalmente operacionais e públicas onde transações e contratos inteligentes são executados de forma real e imutável. Exemplos:
+- **Ethereum Mainnet** – A principal blockchain da Ethereum, onde os contratos inteligentes são executados de maneira descentralizada.
+- **Binance Smart Chain (BSC)** – Uma rede compatível com Ethereum, mas com taxas mais baixas e maior velocidade.
+- **Polygon Mainnet** – Solução de escalabilidade para Ethereum, com transações mais baratas.
+
+### 2️⃣ **Testnets (Redes de Teste)**
+As **testnets** são redes paralelas às mainnets usadas para testar contratos inteligentes sem gastar tokens reais. Exemplos:
+- **Sepolia** e **Goerli** – Redes de teste da Ethereum.
+- **BSC Testnet** – Versão de testes da Binance Smart Chain.
+- **Mumbai Testnet** – Rede de teste do Polygon.
+
+### 3️⃣ **Layer 2 Networks**
+São soluções construídas sobre blockchains principais para aumentar a escalabilidade e reduzir custos.
+- **Optimistic Rollups** (ex: **Optimism, Arbitrum**) – Melhoram o processamento de transações fora da cadeia principal.
+- **zk-Rollups** (ex: **zkSync, StarkNet**) – Utilizam provas de conhecimento zero para validar transações de forma eficiente.
+
+### 4️⃣ **Sidechains**
+São blockchains independentes que interagem com redes principais através de pontes (bridges), mas possuem regras próprias.
+- **Polygon PoS** – Opera como uma sidechain para Ethereum.
+- **Ronin Network** – Usada pelo jogo Axie Infinity para reduzir taxas de transação.
+
+## 🔌 Como Interagir com Networks no Desenvolvimento Web3?
+Para conectar e interagir com essas redes, os desenvolvedores utilizam bibliotecas como:
+
+### 📌 Web3.js (JavaScript)
+```js
+const Web3 = require("web3");
+const web3 = new Web3("https://mainnet.infura.io/v3/SUA_CHAVE_INFURA");
+```
+
+### 📌 ethers.js (TypeScript/JavaScript)
+```ts
+import { ethers } from "ethers";
+const provider = new ethers.JsonRpcProvider("https://sepolia.infura.io/v3/SUA_CHAVE_INFURA");
+```
+
+### 📌 Hardhat (Ambiente de Desenvolvimento)
+```ts
+import { network } from "hardhat";
+await network.provider.request({ method: "hardhat_reset" });
+```
+
+## 🚀 Conclusão
+As **networks** são fundamentais no desenvolvimento Web3, permitindo a criação de aplicações descentralizadas eficientes e seguras. Seja utilizando **mainnets** para produção, **testnets** para desenvolvimento ou **Layer 2 e Sidechains** para escalabilidade, a escolha da rede certa impacta diretamente na experiência do usuário e nos custos da aplicação. 🌍✨
