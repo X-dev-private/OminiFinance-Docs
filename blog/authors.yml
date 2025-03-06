@@ -21,3 +21,13 @@ slorber:
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+X:
+  name: X
+  title: FullStack Developer | Blockchain Enginner
+  url: https://github.com/X-dev-private
+  image_url: https://github.com/X-dev-private.png
+  page: true
+  socials:
+    x: TheXUser00
+    github: X-dev-private
